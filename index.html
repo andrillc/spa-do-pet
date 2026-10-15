@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pêlo. | Gestão para pet shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <section id="login" class="login">
+    <div class="hero">
+      <div class="logo"><span class="logo-mark" data-ic="paw"></span>pêlo<i>.</i></div>
+      <div>
+        <p class="eyebrow">Gestão simples, cuidado completo</p>
+        <h1>Tudo o que seu pet shop precisa, em um só lugar.</h1>
+        <p class="lead">Organize a agenda, acompanhe seus clientes e cuide de cada animal com mais atenção.</p>
+        <div class="chip">
+          <div class="avs"><span class="c0">TH</span><span class="c1">AM</span><span class="c2">BE</span></div>
+          <div><b>248 animais</b><small>recebem cuidado todos os meses</small></div>
+        </div>
+      </div>
+      <p class="safe"><span data-ic="lock"></span>Seus dados ficam protegidos e acessíveis apenas à sua equipe.</p>
+    </div>
+
+    <div class="form-side">
+      <form id="loginForm" novalidate>
+        <p class="eyebrow coral">Bem-vinda de volta</p>
+        <h2>Acesse sua conta</h2>
+        <p class="sub">Entre com seus dados para continuar gerenciando sua operação.</p>
+
+        <div class="f">
+          <label for="email">E-mail</label>
+          <div class="field"><span data-ic="user"></span><input id="email" type="email" placeholder="seuemail@petshop.com.br" autocomplete="username"></div>
+          <small class="err" data-for="email"></small>
+        </div>
+        <div class="f">
+          <label for="senha">Senha</label>
+          <div class="field"><span data-ic="lock"></span><input id="senha" type="password" placeholder="Digite sua senha" autocomplete="current-password">
+            <button type="button" id="toggleSenha" class="icon" aria-label="Mostrar senha" data-ic="eye"></button></div>
+          <small class="err" data-for="senha"></small>
+        </div>
+
+        <div class="row">
+          <label class="check"><input type="checkbox" id="lembrar">Lembrar de mim</label>
+          <button type="button" class="link" id="esqueci">Esqueci minha senha</button>
+        </div>
+        <button class="btn primary block" id="entrar" type="submit">Entrar na plataforma <span data-ic="chev"></span></button>
+        <p class="help">Precisa de ajuda? <button type="button" class="link" id="suporte">Fale com o suporte</button></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- APLICATIVO -->
+  <div id="app" class="app" hidden>
+    <aside class="side" id="side">
+      <div class="logo"><span class="logo-mark" data-ic="paw"></span>pêlo<i>.</i></div>
+      <nav id="nav"></nav>
+      <button class="sair" id="sair"><span data-ic="logout"></span>Sair</button>
+    </aside>
+    <div class="scrim" id="scrim" hidden></div>
+    <main>
+      <header class="top">
+        <button class="icon" id="menuBtn" aria-label="Abrir menu" data-ic="menu"></button>
+        <h2 id="titulo"></h2>
+        <input id="busca" type="search" placeholder="Buscar" aria-label="Buscar">
+        <button class="btn primary" id="novo"><span data-ic="plus"></span>Novo</button>
+      </header>
+      <section id="view"></section>
+    </main>
+  </div>
+
+  <dialog id="dlg">
+    <form id="dlgForm">
+      <h3 id="dlgT"></h3>
+      <div id="dlgB"></div>
+      <div class="actions">
+        <button type="button" class="btn ghost" id="dlgC">Cancelar</button>
+        <button class="btn primary" id="dlgOk">Salvar</button>
+      </div>
+    </form>
+  </dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
